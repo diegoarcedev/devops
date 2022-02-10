@@ -19,7 +19,7 @@ jobs: # a collection of steps
     steps: # a collection of executable commands
       - run:
           name: Exec unit test
-          command: mvn test
+          command: mvn test:install-file "-Dfile=cobra.jar" "-DgroupId=com.cobra" "-DartifactId=cobra" "-Dversion=0.98.4" "-Dpackaging=jar" "-DgeneratePom=true"
             
 workflows:
   build_test:
