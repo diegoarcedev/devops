@@ -1,24 +1,30 @@
-version: 2 # use CircleCI 2.0
+version: 2.1 # use CircleCI 2.1
 jobs: # a collection of steps
   build: # runs not using Workflows must have a `build` job as entry point
+    description: Install dependencies
     working_directory: ~/devops # directory where steps will run
     docker: # run the steps with Docker
       - image: circleci/openjdk:8-jdk-stretch # ...with this image as the primary container; this is where all `steps` will run
     steps: # a collection of executable commands
       - checkout # check out source code to working directory
       - run:
-          name: Install dependecies
-          command: |
-            mvn clean install
+          name: Install application dependencies
+          command: mvn clean install
 
   test: # runs not using Workflows must have a `build` job as entry point
+    description: Start the unit test
     working_directory: ~/devops # directory where steps will run
     docker: # run the steps with Docker
       - image: circleci/openjdk:8-jdk-stretch # ...with this image as the primary container; this is where all `steps` will run
     steps: # a collection of executable commands
-      - checkout # check out source code to working directory
       - run:
           name: Exec unit test
-          command: |
-            mvn clean install
-            mvn test
+          command: mvn test
+            
+workflows:
+  build_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
