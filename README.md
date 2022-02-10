@@ -17,7 +17,7 @@
 3) Ejecutar test locales "mvn test"
 4) Para levantar el proyecto se lo puede realizar localizando la clase "DevopsApplication.java" y ejecutamos el método main (springboot local)
 5) Se levantará en "http://localhost:8080"
-6) Antes de llamar al endPoint "DevOps" se obtiene el token con la siguiente petición del tipo GET "http://localhost:8081/login"
+6) Antes de llamar al endPoint "DevOps" se obtiene el token con la siguiente petición del tipo GET "http://localhost:8080/login"
 
 # Ejecutar las pruebas creando la imagen docker
 1) Descargar las dependencias "mvn clean install"
