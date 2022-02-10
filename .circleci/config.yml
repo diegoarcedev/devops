@@ -10,7 +10,6 @@ jobs: # a collection of steps
       - run:
           name: Install application dependencies
           command: mvn test
-
   test: # runs not using Workflows must have a `build` job as entry point
     description: Start the unit test
     working_directory: ~/devops # directory where steps will run
@@ -19,9 +18,4 @@ jobs: # a collection of steps
     steps: # a collection of executable commands
       - run:
           name: Exec unit test
-          command: mvn test:install-file "-Dfile=cobra.jar" "-DgroupId=com.cobra" "-DartifactId=cobra" "-Dversion=0.98.4" "-Dpackaging=jar" "-DgeneratePom=true"
-            
-workflows:
-  build_test:
-    jobs:
-      - test
+          command: mvn test
