@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-java
+  labels:
+    app: devops-deploy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: devops-deploy
+      tier: backend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: devops-deploy
+        tier: backend
+    spec:
+      containers:
+        - image: gcr.io/devops-340822/devops:0.0.1-SNAPSHOT
+          name: devops-deploy
+          ports:
+            - containerPort: 8080
+              name: devops-deploy

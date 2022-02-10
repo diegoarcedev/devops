@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: devops-service
+  labels:
+    app: devops-deploy
+spec:
+  ports:
+    - targetPort: 8080
+      port: 8081
+  selector:
+    app: devops-deploy
+    tier: backend
+  type: LoadBalancer
