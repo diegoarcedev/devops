@@ -1,6 +1,6 @@
 # devops
 
-#Herramientas utilizadas:
+# Herramientas utilizadas:
 
 1) Backend microservicios (JAVA, springboot)
 2) Manejador de dependencias (Maven)
@@ -10,7 +10,7 @@
 6) Cluster kubernetes (GKE)
 7) CI/CD (CircleCI)
 
-#Pruebas ambiente local
+# Pruebas ambiente local
 
 1) Descargar el proyecto de github (https://github.com/diegoarcedev/devops.git)
 2) Ejecutar el comando "mvn clean install"
@@ -24,7 +24,7 @@
 2) Crear la imagen docker con el siguiente comando "docker build -t devops:0.0.1-SNAPSHOT ."
 3) Iniciar el contenedor con el comando "docker run -p 8080:8080 devops:0.0.1-SNAPSHOT"
 
-#Implementación del loadBalancer en kubernates
+# Implementación del loadBalancer en kubernates
 1) Los archivos utilizados se encuentran en la carpeta "kubernates_files"
 2) Para obtener el token utilizamos el enpoint: "http://35.226.115.123:8081/login" (NOTA: es HTTP)
     La respuesta sería así (un string) :   eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJkZXZvcHMiLCJpYXQiOjE2NDQ0NjU1NDcsInN1YiI6InRlc3QgZGV2b3BzIiwiaXNzIjoiTWFpbiIsImV4cCI6MTY0NDQ2NjA2N30.5IF0bW0YV-neYmDUN8fj3W9R2g1gdwFIdmzEiM-DI68
@@ -38,11 +38,11 @@
    http://35.226.115.123:8081/DevOps
 
 
-#URL TOKEN 
+# URL TOKEN 
 http://35.226.115.123:8081/login
 Nota: no se necesita parámetros y es del tipo GET
 
-#URL ENDPOINT /DevOps
+# URL ENDPOINT /DevOps
 http://35.226.115.123:8081/DevOps
 Nota: se necesitan los parámetros descritos en la prueba enviada (Tipo Post)
 
